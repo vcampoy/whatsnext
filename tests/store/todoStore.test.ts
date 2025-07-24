@@ -24,6 +24,8 @@ describe('todoStore', () => {
       expect(todos).toHaveLength(1)
       expect(todos[0].text).toBe('Test todo')
       expect(todos[0].id).toBeDefined()
+      expect(todos[0].metacriticScore).toBe(70)
+      expect(todos[0].howLongToBeatHours).toBe(0)
       expect(typeof todos[0].createdAt).toBe('string')
       expect(new Date(todos[0].createdAt)).toBeInstanceOf(Date)
     })

@@ -6,6 +6,8 @@ const COOKIE_EXPIRY_DAYS = 365
 export interface TodoItem {
   id: string
   text: string
+  metacriticScore: number
+  howLongToBeatHours: number
   createdAt: string // Store as ISO string for JSON serialization
 }
 
@@ -48,6 +50,8 @@ export const loadTodos = (): TodoItem[] => {
       todo && 
       typeof todo.id === 'string' && 
       typeof todo.text === 'string' && 
+      typeof todo.metacriticScore === 'number' &&
+      typeof todo.howLongToBeatHours === 'number' &&
       typeof todo.createdAt === 'string'
     )
     

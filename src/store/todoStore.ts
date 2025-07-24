@@ -16,6 +16,8 @@ export const useTodoStore = create<TodoState>((set) => ({
     const newTodo: TodoItem = {
       id: crypto.randomUUID(),
       text: text.trim(),
+      metacriticScore: 70,
+      howLongToBeatHours: 0,
       createdAt: new Date().toISOString()
     }
     
