@@ -42,8 +42,8 @@ export default function TodoList() {
 
   if (todos.length === 0) {
     return (
-      <div className="text-center text-gray-500 py-8">
-        <p>No tasks yet. Add your first task above!</p>
+      <div className="text-center text-gray-400 py-8">
+        <p>No games yet. Add your first game above!</p>
       </div>
     )
   }

@@ -28,7 +28,7 @@ describe('App', () => {
     render(<App />)
     
     const appContainer = screen.getByTestId('header').parentElement
-    expect(appContainer).toHaveClass('min-h-screen', 'flex', 'flex-col', 'bg-gray-100')
+    expect(appContainer).toHaveClass('min-h-screen', 'flex', 'flex-col', 'bg-gray-900')
   })
 
   it('should render components in correct order', () => {

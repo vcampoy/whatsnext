@@ -18,24 +18,24 @@ describe('TodoInput', () => {
     mockUseTodoStore.mockReturnValue(mockAddTodo)
   })
 
-  it('should render input field and add button', () => {
+    it('should render input field and add button', () => {
     render(<TodoInput />)
-    
-    const input = screen.getByPlaceholderText('Enter a new task...')
+
+    const input = screen.getByPlaceholderText('Enter a new game...')
     const button = screen.getByRole('button', { name: 'Add' })
-    
+
     expect(input).toBeInTheDocument()
     expect(button).toBeInTheDocument()
   })
 
-  it('should update input value when typing', async () => {
+    it('should update input value when typing', async () => {
     const user = userEvent.setup()
     render(<TodoInput />)
-    
-    const input = screen.getByPlaceholderText('Enter a new task...')
-    
+
+    const input = screen.getByPlaceholderText('Enter a new game...')
+
     await user.type(input, 'New todo item')
-    
+
     expect(input).toHaveValue('New todo item')
   })
 
@@ -43,7 +43,7 @@ describe('TodoInput', () => {
     const user = userEvent.setup()
     render(<TodoInput />)
     
-    const input = screen.getByPlaceholderText('Enter a new task...')
+    const input = screen.getByPlaceholderText('Enter a new game...')
     const button = screen.getByRole('button', { name: 'Add' })
     
     await user.type(input, 'Test todo')
@@ -56,34 +56,34 @@ describe('TodoInput', () => {
     const user = userEvent.setup()
     render(<TodoInput />)
     
-    const input = screen.getByPlaceholderText('Enter a new task...')
+    const input = screen.getByPlaceholderText('Enter a new game...')
     
     await user.type(input, 'Test todo{enter}')
     
     expect(mockAddTodo).toHaveBeenCalledWith('Test todo')
   })
 
-  it('should clear input after adding todo via button', async () => {
+    it('should clear input after adding todo via button', async () => {
     const user = userEvent.setup()
     render(<TodoInput />)
-    
-    const input = screen.getByPlaceholderText('Enter a new task...')
+
+    const input = screen.getByPlaceholderText('Enter a new game...')
     const button = screen.getByRole('button', { name: 'Add' })
-    
+
     await user.type(input, 'Test todo')
     await user.click(button)
-    
+
     expect(input).toHaveValue('')
   })
 
-  it('should clear input after adding todo via Enter key', async () => {
+    it('should clear input after adding todo via Enter key', async () => {
     const user = userEvent.setup()
     render(<TodoInput />)
-    
-    const input = screen.getByPlaceholderText('Enter a new task...')
-    
+
+    const input = screen.getByPlaceholderText('Enter a new game...')
+
     await user.type(input, 'Test todo{enter}')
-    
+
     expect(input).toHaveValue('')
   })
 
@@ -102,7 +102,7 @@ describe('TodoInput', () => {
     const user = userEvent.setup()
     render(<TodoInput />)
     
-    const input = screen.getByPlaceholderText('Enter a new task...')
+    const input = screen.getByPlaceholderText('Enter a new game...')
     const button = screen.getByRole('button', { name: 'Add' })
     
     await user.type(input, '   ')
@@ -122,12 +122,12 @@ describe('TodoInput', () => {
     expect(mockAddTodo).not.toHaveBeenCalled()
   })
 
-  it('should have proper accessibility attributes', () => {
+    it('should have proper accessibility attributes', () => {
     render(<TodoInput />)
-    
-    const input = screen.getByPlaceholderText('Enter a new task...')
+
+    const input = screen.getByPlaceholderText('Enter a new game...')
     const button = screen.getByRole('button', { name: 'Add' })
-    
+
     expect(input).toHaveAttribute('type', 'text')
     expect(button).toHaveAttribute('type', 'button')
   })
@@ -135,10 +135,10 @@ describe('TodoInput', () => {
   it('should have proper CSS classes for styling', () => {
     render(<TodoInput />)
     
-    const input = screen.getByPlaceholderText('Enter a new task...')
+    const input = screen.getByPlaceholderText('Enter a new game...')
     const button = screen.getByRole('button', { name: 'Add' })
     
-    expect(input).toHaveClass('flex-1', 'px-4', 'py-2', 'border', 'border-gray-300', 'rounded-lg')
+    expect(input).toHaveClass('flex-1', 'px-4', 'py-2', 'bg-gray-800', 'border', 'border-gray-600', 'rounded-lg')
     expect(button).toHaveClass('px-6', 'py-2', 'bg-blue-600', 'text-white', 'rounded-lg')
   })
 }) 

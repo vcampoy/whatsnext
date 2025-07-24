@@ -90,7 +90,7 @@ describe('TodoItem', () => {
     )
 
     const todoItem = screen.getByRole('heading', { name: 'Test todo item' }).closest('div[class*="p-4"]')
-    expect(todoItem).toHaveClass('bg-white', 'rounded-lg', 'shadow-sm', 'border', 'border-gray-200')
+    expect(todoItem).toHaveClass('bg-gray-800', 'rounded-lg', 'border', 'border-gray-700')
   })
 
   it('should have cursor-move class for drag indication', () => {
@@ -112,7 +112,7 @@ describe('TodoItem', () => {
     )
 
     const numberCircle = screen.getByText('3') // index + 1
-    expect(numberCircle).toHaveClass('bg-blue-100', 'text-blue-600', 'rounded-full')
+    expect(numberCircle).toHaveClass('bg-blue-600', 'text-white', 'rounded-full')
   })
 
   it('should render text with correct styling', () => {
@@ -123,7 +123,7 @@ describe('TodoItem', () => {
     )
 
     const todoText = screen.getByRole('heading', { name: 'Test todo item' })
-    expect(todoText).toHaveClass('text-lg', 'font-semibold', 'text-gray-800')
+    expect(todoText).toHaveClass('text-lg', 'font-semibold', 'text-gray-100')
   })
 
   it('should render remove button with correct styling', () => {
@@ -134,7 +134,7 @@ describe('TodoItem', () => {
     )
 
     const removeButton = screen.getByTitle('Remove task')
-    expect(removeButton).toHaveClass('text-red-500', 'hover:text-red-700', 'transition-colors')
+    expect(removeButton).toHaveClass('text-red-400', 'hover:text-red-300', 'transition-colors')
   })
 
   it('should handle empty text', () => {
@@ -203,7 +203,7 @@ describe('TodoItem', () => {
     )
 
     expect(screen.getByText('25h')).toBeInTheDocument()
-    expect(screen.getByText('Duration:')).toBeInTheDocument()
+    expect(screen.getByText('How long to beat:')).toBeInTheDocument()
   })
 
   it('should render disabled G2A buy button', () => {

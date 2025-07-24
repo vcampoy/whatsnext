@@ -14,7 +14,7 @@ describe('Header', () => {
     render(<Header />)
     
     const header = screen.getByRole('banner')
-    expect(header).toHaveClass('bg-blue-600', 'text-white', 'shadow-lg')
+    expect(header).toHaveClass('bg-gray-800', 'text-gray-100', 'shadow-xl')
   })
 
   it('should render title with correct heading level', () => {

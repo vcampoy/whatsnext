@@ -16,7 +16,7 @@ describe('Footer', () => {
     
     const footer = screen.getByRole('contentinfo')
     expect(footer).toBeInTheDocument()
-    expect(footer).toHaveClass('bg-gray-800', 'text-white')
+    expect(footer).toHaveClass('bg-gray-800', 'text-gray-400')
   })
 
   it('should have proper styling classes', () => {

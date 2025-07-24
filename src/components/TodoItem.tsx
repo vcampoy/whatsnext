@@ -38,17 +38,17 @@ export default function TodoItem({ id, index, text, metacriticScore, howLongToBe
       style={style}
       {...attributes}
       {...listeners}
-      className={`p-4 bg-white rounded-lg shadow-sm border border-gray-200 transition-shadow cursor-move ${
-        isDragging ? 'shadow-lg' : 'hover:shadow-md'
+      className={`p-4 bg-gray-800 rounded-lg border border-gray-700 transition-all cursor-move ${
+        isDragging ? 'shadow-2xl shadow-blue-500/20 border-blue-500/30' : 'hover:shadow-lg hover:shadow-gray-900/50 hover:border-gray-600'
       }`}
     >
       {/* Header row with item number, title, and delete button */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-start space-x-3 flex-1">
-          <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-medium mt-1">
+          <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium mt-1">
             {index + 1}
           </span>
-          <h3 className="text-lg font-semibold text-gray-800 flex-1 leading-tight">
+          <h3 className="text-lg font-semibold text-gray-100 flex-1 leading-tight">
             {text}
           </h3>
         </div>
@@ -57,7 +57,7 @@ export default function TodoItem({ id, index, text, metacriticScore, howLongToBe
             e.stopPropagation()
             onRemove(id)
           }}
-          className="text-red-500 hover:text-red-700 transition-colors ml-4 flex-shrink-0"
+          className="text-red-400 hover:text-red-300 transition-colors ml-4 flex-shrink-0"
           title="Remove task"
         >
           ✕
@@ -69,7 +69,7 @@ export default function TodoItem({ id, index, text, metacriticScore, howLongToBe
         <div className="flex items-center space-x-4">
           {/* Metacritic Score */}
           <div className="flex items-center space-x-2">
-            <span className="text-gray-600">Metacritic:</span>
+            <span className="text-gray-400">Metacritic:</span>
             <span className={`px-2 py-1 rounded text-white text-xs font-medium ${getMetacriticColor(metacriticScore)}`}>
               {metacriticScore}
             </span>
@@ -77,8 +77,8 @@ export default function TodoItem({ id, index, text, metacriticScore, howLongToBe
           
           {/* How Long to Beat Hours */}
           <div className="flex items-center space-x-2">
-            <span className="text-gray-600">How long to beat:</span>
-            <span className="text-gray-800 font-medium">
+            <span className="text-gray-400">How long to beat:</span>
+            <span className="text-gray-200 font-medium">
               {howLongToBeatHours}h
             </span>
           </div>
@@ -91,7 +91,7 @@ export default function TodoItem({ id, index, text, metacriticScore, howLongToBe
             // G2A functionality to be implemented
           }}
           disabled
-          className="px-3 py-1.5 bg-gray-300 text-gray-500 rounded text-xs font-medium cursor-not-allowed"
+          className="px-3 py-1.5 bg-gray-700 text-gray-500 border border-gray-600 rounded text-xs font-medium cursor-not-allowed"
           title="Buy on G2A (Coming Soon)"
         >
           Buy on G2A

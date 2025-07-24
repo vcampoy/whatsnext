@@ -114,7 +114,7 @@ describe('TodoList', () => {
     
     render(<TodoList />)
     
-    expect(screen.getByText('No tasks yet. Add your first task above!')).toBeInTheDocument()
+    expect(screen.getByText('No games yet. Add your first game above!')).toBeInTheDocument()
   })
 
   it('should have proper CSS classes for styling', () => {
@@ -124,7 +124,7 @@ describe('TodoList', () => {
     todoItems.forEach(item => {
       // Find the outermost todo container div
       const todoElement = item.closest('div[class*="p-4"]')
-      expect(todoElement).toHaveClass('p-4', 'bg-white', 'rounded-lg', 'shadow-sm')
+      expect(todoElement).toHaveClass('p-4', 'bg-gray-800', 'rounded-lg', 'border')
     })
   })
 
