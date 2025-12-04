@@ -1,15 +1,16 @@
-import Header from './components/Header'
-import Container from './components/Container'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import Login from './components/Login'
 import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900">
-      <Header />
-      <Container />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   )
 }
 
