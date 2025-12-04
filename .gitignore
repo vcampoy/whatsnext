@@ -4,6 +4,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -62,8 +63,12 @@ web_modules/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
+# Yarn Integrity file (keep for reference but not used)
 .yarn-integrity
+
+# pnpm store
+.pnpm-store/
+.pnpm-debug.log
 
 # dotenv environment variable files
 .env
@@ -125,7 +130,7 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# yarn v3
+# yarn v3 (keep for reference but not used)
 .pnp.*
 .yarn/*
 !.yarn/patches
